@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swerve Soda - Twist The Taste!</title>
+    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="grid-con header">
+        <div class="col-span-full l-col-span-12 navbar-container">
+            <nav class="navbar">
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+        
+                <a href="#home" class="logo">
+                    <img src="images/swerve_logo.svg" alt="Swerve Logo" class="logo-image">
+                </a>
+        
+                <ul class="nav-menu" id="hamburger-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="flavours.html">Flavours</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+<a href="#cart" class="cart-icon" aria-label="Shopping Cart">
+    <i class="fas fa-shopping-cart"></i>
+</a>
+
+            </nav>
+        </div>
+               
+    </header>
+    
+    <main>
+        <section id="home" class="grid-con hero-section">
+            <div class="col-span-full l-col-span-7 hero-text">
+                <h1>Twist The Taste, Feel The Swerve!</h1>
+                <p>A fizzy fusion of soda & milk - Taste the unexpected!</p>
+                <a href="flavours.html" class="btn-primary">Explore Flavours</a>
+            </div>
+            <div class="col-span-full l-col-span-5 hero-image">
+                <img src="images/hero_image.svg" alt="Hero Image" id="hero-image">
+            </div>
+        </section>
+
+        <section class="grid-con feature-section">
+            <div class="feature-image col-span-full m-col-span-6 l-col-span-6">
+                <img src="images/poster.png" alt="Brand Poster" class="image-box">
+            </div>
+            <div class="feature-content col-span-full m-col-span-6 l-col-span-6">
+                <div class="content-box">
+                    <h2>What Makes 'Swerve' Unique?</h2>
+                    <p>
+                        “ Swerve isn’t just a drink - it’s an experience. 
+                        We’re a bold, refreshing soda brand crafted to shake up your taste buds and twist your everyday moments into something extraordinary. With unique, irresistible flavors like grape, peach, milk, banana, and strawberry, every sip is a burst of excitement that keeps you coming back for more. Smooth, fizzy, and full of attitude - Swerve is the perfect companion for any occasion. Why settle for ordinary when you can Swerve? Crack it open. Feel the fizz. Taste the twist. Grab yours now - don’t let the flavor wave pass you by! “
+                    </p>
+                </div>
+            </div>
+        </section>
+
+<section id="shop" class="grid-con products-section">
+    <h2 class="col-span-full">Our Flavours</h2>
+    
+    <div class="carousel-container col-span-full">
+        <div class="carousel-wrapper grid-con nested-grid">
+            <article class="product-card col-span-2 m-col-span-3 l-col-span-3">
+                <img src="images/milk-can.png" alt="Milk Can">
+                <h3 id="milk">Milk Wave</h3>
+                <span class="price"><del>C$4.00</del> <strong>C$3.60</strong></span>
+                <button class="btn-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                <button class="promo-btn" data-id="milk">
+                    <img src="images/milk.svg" alt="Milk Promo Icon" class="promo-icon"> View Promo
+                  </button>
+                  <div class="promo-popup hidden"></div>
+            </article>
+
+            <article class="product-card col-span-2 m-col-span-3 l-col-span-3">
+                <img src="images/grape-can.png" alt="Grape Can">
+                <h3 id="grape">Grape Rush</h3>
+                <span class="price"><del>C$4.00</del> <strong>C$3.60</strong></span>
+                <button class="btn-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                    <button class="promo-btn" data-id="grape">
+                    <img src="images/grape.svg" alt="Grape Promo Icon" class="promo-icon"> View Promo
+                    </button>
+                    <div class="promo-popup hidden"></div>
+            </article>
+
+            <article class="product-card col-span-2 m-col-span-3 l-col-span-3">
+                <img src="images/peach-can.png" alt="Peach Can">
+                <h3 id="peach">Peachy Pop</h3>
+                <span class="price"><del>C$4.00</del> <strong>C$3.60</strong></span>
+                <button class="btn-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                <button class="promo-btn" data-id="peach">
+                    <img src="images/peach.svg" alt="Peach Promo Icon" class="promo-icon"> View Promo
+                  </button>
+                  <div class="promo-popup hidden"></div>
+            </article>
+
+            <article class="product-card col-span-2 m-col-span-3 l-col-span-3">
+                <img src="images/strawberry-can.png" alt="Strawberry Can">
+                <h3 id="strawberry">Berry Bliss</h3>
+                <span class="price"><del>C$4.00</del> <strong>C$3.60</strong></span>
+                <button class="btn-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                <button class="promo-btn" data-id="strawberry">
+                <img src="images/strawberry.svg" alt="Strawberry Promo Icon" class="promo-icon"> View Promo
+                  </button>
+                  <div class="promo-popup hidden"></div>
+            </article>
+
+            <article class="product-card col-span-2 m-col-span-3 l-col-span-3 hidden">
+                <img src="images/banana-can.png" alt="Banana Can">
+                <h3 id="banana">Banana Breeze</h3>
+                <span class="price"><del>C$4.00</del> <strong>C$3.60</strong></span>
+                <button class="btn-cart"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                <button class="promo-btn" data-id="banana">
+                <img src="images/banana.svg" alt="Banana Promo Icon" class="promo-icon"> View Promo
+                  </button>
+                  <div class="promo-popup hidden"></div>
+            </article>
+        </div>
+    </div>
+    
+    <div class="carousel-controls col-span-full">
+        <button class="prev-btn">&lt;</button>
+        <button class="next-btn">&gt;</button>
+    </div>
+</section>
+
+<section class="grid-con reviews-section">
+    <h2 class="col-span-full">Customer Reviews</h2>
+  
+    <div class="review-card col-span-2 m-col-span-3 l-col-span-3">
+      <p><i class="fas fa-quote-left"></i> “Swerve is the best! The Milk Wave flavor is amazing!”<br> <span>- Jane D.</span></p>
+    </div>
+  
+    <div class="review-card col-span-2 m-col-span-3 l-col-span-3">
+      <p><i class="fas fa-quote-left"></i> “The Grape Rush is so refreshing and smooth!”<br> <span>- Tom H.</span></p>
+    </div>
+  
+    <div class="review-card col-span-2 m-col-span-3 l-col-span-3">
+      <p><i class="fas fa-quote-left"></i> “Peachy Pop is my go-to summer drink. So good!”<br> <span>- Sarah P.</span></p>
+    </div>
+  
+    <div class="review-card col-span-2 m-col-span-3 l-col-span-3">
+      <p><i class="fas fa-quote-left"></i> “I was skeptical about soda + milk, but I’m hooked.”<br> <span>- Alex R.</span></p>
+    </div>
+  </section>  
+
+  <section class="grid-con values-section">
+    <h2 class="col-span-full">What We Stand For ?</h2>
+    <div class="col-span-full grid-con nested-grid">
+  
+      <div class="value-box col-span-2 m-col-span-3 l-col-span-2">
+        <i class="fas fa-leaf"></i>
+        <p>All Natural</p>
+      </div>
+  
+      <div class="value-box col-span-2 m-col-span-3 l-col-span-2">
+        <i class="fas fa-smile-beam"></i>
+        <p>Feel-Good Vibes</p>
+      </div>
+  
+      <div class="value-box col-span-2 m-col-span-3 l-col-span-2">
+        <i class="fas fa-bolt"></i>
+        <p>Bold Flavour</p>
+      </div>
+  
+      <div class="value-box col-span-2 m-col-span-3 l-col-span-2">
+        <i class="fas fa-recycle"></i>
+        <p>Eco-Friendly</p>
+      </div>
+  
+      <div class="value-box col-span-2 m-col-span-3 l-col-span-2">
+        <i class="fas fa-star"></i>
+        <p>Premium Quality</p>
+      </div>
+  
+      <div class="value-box col-span-2 m-col-span-3 l-col-span-2">
+        <i class="fas fa-heart"></i>
+        <p>Loved by Everyone</p>
+      </div>
+  
+    </div>
+  </section>  
+  
+    </main>
+    
+    <footer class="grid-con footer">
+        <div class="col-span-full l-col-span-6 footer-info">
+            <p>&copy; 2025 Swerve Soda. All rights reserved.</p>
+        </div>
+        
+        <div class="col-span-full l-col-span-6 footer-links">
+            <a href="#terms">Terms & Conditions</a>
+            <a href="#privacy">Privacy Policy</a>
+    
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.twitter.com" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://www.tiktok.com" target="_blank" aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    </body>
+</html>
+  
