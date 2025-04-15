@@ -1,0 +1,791 @@
+/* --- General Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4ff;
+    color: #333;
+    max-width: 1200px; /* Boxed Layout */
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  
+  /* --- Utility Classes --- */
+  .hidden {
+    display: none;
+  }
+  
+  button, input {
+    border: none;
+    outline: none;
+  }
+  
+  .nested-grid {
+    display:grid;
+  }
+  /* --- Header Styles (Mobile First) --- */
+  .header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(5px);
+    height: 80px;
+    padding: 10px 20px;
+  }
+  
+  /* Navbar cho mobile */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Logo Căn Giữa Trên Mobile */
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 10px;
+  }
+  
+  .logo-image {
+    max-width: 120px;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Icon Giỏ Hàng (Mobile và Desktop) */
+  .cart-icon {
+    font-size: 1.8rem;
+    color: #25408f;
+    margin-top: 5px;
+  }
+  
+  .cart-icon:hover {
+    color: #555;
+    transform: translateY(-5px);
+    transition: color 0.4s, transform 0.4s;
+  }
+  
+  /* --- Hamburger Menu Styles --- */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 30;
+    margin-top: 10px;
+    }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #25408f;
+    margin: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Hamburger Animation */
+  /* Hiệu ứng gạch chân động khi hover */
+  #hamburger-menu a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #25408f;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  /* Khi hover, gạch chân sẽ chạy từ giữa ra 2 bên */
+  #hamburger-menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* Đổi màu chữ khi hover */
+  #hamburger-menu a:hover {
+    color: #25408f;
+  }
+  
+  /* Hiệu ứng highlight mờ phía dưới mục menu */
+  #hamburger-menu a::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 5px;
+    background-color: rgba(58, 122, 253, 0.3);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 5px;
+    z-index: -1;
+  }
+  
+  /* Hiệu ứng highlight mở rộng khi hover */
+  #hamburger-menu a:hover::before {
+    width: 100%;
+    height: 10px;
+    bottom: -8px;
+  }
+  
+  /* --- Mobile Menu Styles --- */
+#hamburger-menu {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 20;
+  list-style: none;
+  border-radius: 10px;
+}
+
+.bar {
+  border-radius: 3px;
+  transition: all 0.4s ease;
+}
+
+
+#hamburger-menu.active {
+  display: flex;
+}
+
+/* Kiểu chữ và hiệu ứng hover cho menu */
+#hamburger-menu a {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #555;
+  text-decoration: none;
+  padding: 10px 0;
+  transition: color 0.3s;
+}
+
+#hamburger-menu a:hover {
+  color: #25408f;
+}
+
+/* --- Hiệu Ứng Hover Gạch Chân Động --- */
+#hamburger-menu a::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #25408f;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+#hamburger-menu a:hover::after {
+  width: 100%;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(15px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-15px);
+}
+  
+  /* --- Desktop Styles --- */
+  @media screen and (min-width: 768px) {
+    /* Đặt lại vị trí logo về bên trái */
+    .logo {
+      position: static;
+      transform: none;
+      margin: 0;
+      justify-self: start;
+      margin-top: -21px;
+      margin-left: -45px;
+  
+    }
+  
+    .logo-image {
+      max-width: 150px;
+    }
+  
+    /* Thanh điều hướng dạng tab ngang */
+    #hamburger-menu {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      position: static;
+      background: none;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+      list-style: none;
+      margin-top: -20px; 
+      margin-right: -20px;
+  
+    }
+  
+    /* Ẩn hamburger trên desktop */
+    .hamburger {
+      display: none;
+    }
+  
+    .navbar-container {
+      margin-top:-48px;
+      margin-left: -10px;
+      padding: 20px;
+    }
+    
+  
+    /* Căn giữa menu trên desktop */
+    .navbar {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+  
+    /* Căn menu giữa, logo trái, giỏ hàng phải */
+    .logo {
+      grid-column: 1 / 2;
+      justify-self: start;
+      padding-left: 20px;
+    }
+  
+    #hamburger-menu {
+      grid-column: 2 / 3;
+      justify-self: center;
+    }
+  
+    .cart-icon {
+      grid-column: 3 / 4;
+      justify-self: end;
+      padding-right: 20px;
+      margin-top: -20px;
+      margin-right: -25px;
+    }
+    /* --- Hiệu ứng gạch chân động trên mỗi mục menu --- */
+  .nav-menu a {
+    position: relative;
+    font-weight: bold;
+    transition: color 0.3s;
+    color: #555;
+    text-decoration: none; /* Bỏ gạch chân mặc định */
+    padding: 5px 0;
+    overflow: hidden;
+  }
+  
+  /* Hiệu ứng gạch chân chỉ dưới từng mục */
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #25408f;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  /* Khi hover, chỉ gạch chân dưới chữ */
+  .nav-menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* Đổi màu chữ khi hover */
+  .nav-menu a:hover {
+    color: #25408f
+  }
+  
+  }
+  
+  /* --- Hero Section --- */
+  .hero-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f6faff, #cce1ff);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    height: 650px;
+  }
+  
+  .hero-text h1 {
+    font-size: 4rem;
+    color: #25408f;
+    animation: fadeIn 1s ease-in-out;
+    margin-top: -30px;
+  }
+  
+  .hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  #hero-image {
+  margin-top: -155px;
+  max-width: 450px;
+  object-fit: contain;
+  display: block;
+  }
+  
+  
+  /* --- Button Primary Styles --- */
+  .btn-primary {
+    background: #25408f;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(58, 122, 253, 0.4);
+    height: 80px;
+    width: 250px;
+    font-size: large;
+    font-weight:600;
+    display: inline-block; 
+    text-align: center;
+    line-height: 55px;     
+    text-decoration: none; 
+  }
+  
+  
+  /* Hiệu ứng khi hover: nổi bật và ánh sáng lướt qua */
+  .btn-primary:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px rgba(58, 122, 253, 0.4);
+    background: white;
+    color: #25408f;
+    font-weight: bold;
+  }
+  
+  
+  /* Hiệu ứng khi nhấn vào button */
+  .btn-primary:active {
+    transform: translateY(2px);
+    box-shadow: 0 10px 10px rgba(58, 122, 253, 0.2);
+  }
+  
+  /* --- Desktop Styles --- */
+  @media screen and (min-width: 768px) {
+    .hero-section {
+      padding: 60px 0;
+      background: linear-gradient(135deg, #f6faff, #cce1ff);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      position: relative;
+      height: 520px;
+    }
+    
+    .hero-text h1 {
+      font-size: 4rem;
+      color: #25408f;
+      animation: fadeIn 1s ease-in-out;
+      margin-top: -20px;
+      margin-left: 50px;
+    }
+    
+    .hero-text p {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      animation: fadeIn 1.5s ease-in-out;
+      margin-left: 50px
+    }
+    
+    #hero-image {
+    margin-top: -50px;
+    max-width: 100%;
+    }
+    
+    /* --- Button Primary Styles --- */
+    .btn-primary {
+      margin-left: 50px
+    }
+  }
+  
+  /* --- Experience Section --- */
+.experience-section {
+    padding: 50px 0;
+    background-color: #fff;
+    border-radius: 10px;
+  }
+  
+  .experience-section h2 {
+  margin-top: -45px;
+  margin-left: 15px;
+  padding: 15px;
+  color: #25408f;
+  font-size: 35px;;
+  }
+  .experience-grid {
+    gap: 30px;
+    padding: 25px;
+  }
+  
+  .experience-item {
+    text-align: center;
+    padding: 20px;
+    background-color: #eaf4ff;
+    border-radius: 10px;
+    transition: transform 0.3s;
+  }
+  
+  .experience-item img {
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .experience-item p {
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .experience-item:hover {
+    transform: translateY(-10px);
+  }
+
+/* --- Community Section --- */
+.community-section {
+    padding: 60px 0;
+    background: linear-gradient(135deg, #f0f4ff, #d0e1ff);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Tiêu đề chính */
+.community-section h2 {
+    font-size: 2.5rem;
+    color: #25408f;
+    margin-bottom: 20px;
+}
+
+/* Đoạn mô tả */
+.community-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* --- Join Form (Updated with Name & Phone) --- */
+.join-form {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.join-form h3 {
+  font-size: 1.8rem;
+  color: #25408f;
+  margin-bottom: 10px;
+}
+
+.join-form p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.join-form input {
+  width: 80%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 25px;
+}
+
+.join-form input[type="tel"] {
+  appearance: textfield;
+}
+
+.join-form button {
+  width: 100%;
+  height: 80px;
+  background: #25408f;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: large;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(58, 122, 253, 0.4);
+}
+
+/* Hover effect */
+.join-form button:hover {
+  transform: translateY(-5px);
+  background: white;
+  color: #25408f;
+  box-shadow: 0 20px 25px rgba(58, 122, 253, 0.4);
+}
+
+/* Click (active) effect */
+.join-form button:active {
+  transform: translateY(2px);
+  box-shadow: 0 10px 10px rgba(58, 122, 253, 0.2);
+}
+
+
+/* --- Share Swerve Moment --- */
+.share-moment {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 40px;
+}
+
+.share-moment h3 {
+  font-size: 1.8rem;
+  color: #25408f;
+  margin-bottom: 10px;
+}
+
+.share-moment p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.share-moment textarea {
+  width: 100%;
+  height: 120px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #ddd;
+  resize: vertical;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.btn-secondary {
+  background: white;
+  color: #25408f;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid #25408f;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(58, 122, 253, 0.2);
+  height: 80px;
+  width: 250px;
+  font-size: large;
+  font-weight: bold;
+}
+
+/* Hover effect giống btn-primary */
+.btn-secondary:hover {
+  transform: translateY(-5px);
+  background: #25408f;
+  color: white;
+  box-shadow: 0 20px 25px rgba(58, 122, 253, 0.4);
+}
+
+/* Active effect */
+.btn-secondary:active {
+  transform: translateY(2px);
+  box-shadow: 0 10px 10px rgba(58, 122, 253, 0.2);
+}
+
+
+/* --- Contact Details --- */
+.contact-details {
+    background: #f6faff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Tiêu đề bên trong phần liên hệ */
+.contact-details h3 {
+    font-size: 1.5rem;
+    color: #25408f;
+    margin-bottom: 10px;
+}
+
+.contact-details p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-details i {
+    color: #25408f;
+    margin-right: 10px;
+    font-size: 1.5rem;
+}
+ 
+/* --- Map Section --- */
+.map-section {
+    padding: 40px 20px;
+    background: #fff;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Tiêu đề chính */
+.map-section h2 {
+    font-size: 2rem;
+    color: #25408f;
+    margin-bottom: 15px;
+}
+
+/* Đoạn mô tả */
+.map-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+
+  /* --- Footer --- */
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    border-top: 2px solid #25408f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .footer-info {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: white;
+    margin-right: 15px;
+    transition: color 0.3s;
+    text-decoration: none;
+  }
+  
+  .footer-links a:hover {
+    color: #25408f;
+    text-decoration-line: underline;
+  }
+  
+  /* Biểu tượng mạng xã hội */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #25408f;
+    transform: translateY(-3px);
+  }
+  
+  @media screen and (min-width: 768px) {
+    .flavor-challenge {
+        margin-top: 0;
+    }
+    
+    .join-form button {
+        margin-left: 0;
+    }
+}
+
+
+
+  /* --- Responsive Styles --- */
+  @media screen and (max-width: 767px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-menu {
+        display: none;
+    }
+    
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+  }
+  
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+    
+    .about-section {
+        flex-direction: row;
+    }
+  }
+  
+  @media screen and (min-width: 1200px) {
+    .hero-text h1 {
+        font-size: 4rem;
+    }
+    
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+  }
+  
+  /* --- Animations --- */
+  @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
